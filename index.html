@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Md Imtiaz Hossain</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1a4fad;
+  --blue-light:#eef3fc;
+  --red:#b03a2e;
+  --green:#1e6b34;
+  --amber:#8a5c00;
+  --purple:#5c1a8a;
+  --border:#e4e2dd;
+  --border-light:#f0ede8;
+  --bg-subtle:#f8f7f4;
+  --text:#1a1a18;
+  --muted:#5c5c58;
+  --muted2:#9a9a94;
+}
+
+body{max-width:760px;margin:0 auto;padding:0 28px 80px;font-family:'Inter',system-ui,sans-serif;font-size:14.5px;line-height:1.75;color:var(--text);background:#fff}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--border);margin-bottom:0}
+.nav-inner{display:flex;overflow-x:auto}
+nav a{color:var(--muted2);font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:13px 13px;text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s,border-color .15s}
+nav a:hover{color:var(--text)}
+nav a.active{color:var(--blue);border-bottom-color:var(--blue)}
+
+/* ── SECTIONS ── */
+section{padding:2.8rem 0;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+
+/* ── SECTION HEADING — the key design element ── */
+.sec-head{display:flex;align-items:center;gap:0;margin-bottom:1.6rem}
+.sec-head-label{
+  font-family:'Inter',sans-serif;
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#fff;
+  background:var(--text);
+  padding:5px 12px;
+  border-radius:3px 0 0 3px;
+  white-space:nowrap;
+  line-height:1;
+  height:26px;
+  display:flex;
+  align-items:center;
+}
+.sec-head-line{flex:1;height:1px;background:var(--border)}
+
+/* ── PROFILE ── */
+.header-wrap{display:flex;gap:28px;align-items:flex-start}
+.photo-placeholder{width:108px;height:132px;border-radius:6px;border:1.5px dashed var(--border);background:var(--bg-subtle);display:flex;align-items:center;justify-content:center;font-size:.67rem;color:var(--muted2);text-align:center;line-height:1.6;flex-shrink:0}
+.header-info{flex:1}
+h1{font-family:'EB Garamond',Georgia,serif;font-size:2.1rem;font-weight:400;line-height:1.15;margin-bottom:4px;color:var(--text)}
+.role{font-size:.85rem;color:var(--red);font-weight:500;margin-bottom:3px;letter-spacing:.01em}
+.inst{font-size:.83rem;color:var(--muted);margin-bottom:10px}
+.profile-links{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.profile-links a{font-size:.73rem;color:var(--blue);background:var(--blue-light);border:1px solid #c4d6f0;border-radius:3px;padding:3px 9px;text-decoration:none;transition:background .15s}
+.profile-links a:hover{background:#dde8f7;text-decoration:none}
+.bio{font-size:.875rem;color:var(--muted);line-height:1.85;margin-top:1.3rem}
+
+/* ── NEWS ── */
+.news-list{display:flex;flex-direction:column;gap:0}
+.news-item{display:grid;grid-template-columns:80px 52px 1fr;gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid var(--border-light)}
+.news-item:last-child{border-bottom:none}
+.news-date{font-size:.73rem;color:var(--muted2);padding-top:1px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ntag{font-size:.62rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 6px;border-radius:3px;font-family:'Inter',sans-serif;white-space:nowrap;display:inline-block;margin-top:1px}
+.ntag-paper{background:#eef3fc;color:var(--blue)}
+.ntag-pos{background:#fdecea;color:var(--red)}
+.ntag-award{background:#fef8e7;color:var(--amber)}
+.ntag-teach{background:#eaf5ee;color:var(--green)}
+.ntag-patent{background:#f5eafd;color:var(--purple)}
+.news-body{font-size:.85rem;color:var(--text);line-height:1.6}
+.news-body em{color:var(--muted)}
+.news-sub{font-size:.78rem;color:var(--muted);margin-top:2px}
+.if-badge{font-size:.65rem;color:var(--green);background:#eaf5ee;border:1px solid #b8dfc4;padding:1px 5px;border-radius:3px;margin-left:2px}
+.conf-badge{font-size:.65rem;color:var(--red);background:#fdecea;border:1px solid #f0bfba;padding:1px 5px;border-radius:3px;margin-left:2px}
+
+/* ── RESEARCH ── */
+.research-list{display:flex;flex-direction:column}
+.research-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid var(--border-light);align-items:baseline}
+.research-item:last-child{border-bottom:none}
+.ri-dot{width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:10px}
+.ri-text{font-size:.875rem;color:var(--muted)}
+.ri-text strong{color:var(--text);font-weight:500}
+
+/* ── PUBLICATIONS ── */
+.pub-list{display:flex;flex-direction:column}
+.pub-item{display:grid;grid-template-columns:38px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--border-light)}
+.pub-item:last-child{border-bottom:none}
+.pub-year{font-size:.72rem;color:var(--muted2);padding-top:2px;font-variant-numeric:tabular-nums}
+.pub-title{font-size:.875rem;color:var(--text);line-height:1.55;margin-bottom:3px}
+.pub-authors{font-size:.77rem;color:var(--muted);margin-bottom:2px;font-style:italic}
+.pub-authors strong{font-style:normal;font-weight:500;color:var(--text)}
+.pub-venue{font-size:.77rem;color:var(--muted)}
+.pub-meta{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+
+/* ── EXPERIENCE & EDUCATION ── */
+.row-list{display:flex;flex-direction:column}
+.row-item{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--border-light)}
+.row-item:last-child{border-bottom:none}
+.row-period{font-size:.72rem;color:var(--muted2);padding-top:2px;line-height:1.5}
+.row-title{font-size:.875rem;font-weight:500;color:var(--text);margin-bottom:2px}
+.row-org{font-size:.8rem;color:var(--blue);margin-bottom:2px}
+.row-detail{font-size:.77rem;color:var(--muted)}
+
+/* ── TEACHING ── */
+.course-item{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--border-light)}
+.course-item:last-child{border-bottom:none}
+.course-sem{font-size:.72rem;color:var(--muted2);padding-top:2px}
+.course-title{font-size:.875rem;font-weight:500;color:var(--text);margin-bottom:2px}
+.course-meta{font-size:.78rem;color:var(--muted);margin-bottom:3px}
+.course-desc{font-size:.78rem;color:var(--muted)}
+
+/* ── CONTACT ── */
+.contact-list{display:flex;flex-direction:column;gap:7px}
+.contact-row{display:flex;gap:16px;font-size:.86rem;align-items:baseline}
+.contact-label{color:var(--muted2);font-size:.72rem;min-width:88px;flex-shrink:0}
+.contact-val a{color:var(--blue)}
+
+footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.72rem;color:var(--muted2);display:flex;justify-content:space-between}
+
+@media(max-width:600px){
+  .header-wrap{flex-direction:column}
+  .photo-placeholder{width:88px;height:108px}
+  .row-item,.course-item{grid-template-columns:1fr}
+  .news-item{grid-template-columns:70px 46px 1fr}
+  nav a{padding:11px 9px;font-size:.66rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="topnav">
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="header-wrap">
+    <div class="photo-placeholder">Your photo<br>here<br><span style="font-size:.6rem">(replace with &lt;img&gt;)</span></div>
+    <div class="header-info">
+      <h1>Md Imtiaz Hossain</h1>
+      <div class="role">Postdoctoral Researcher</div>
+      <div class="inst">Department of Bioinformatics · <a href="https://www.utsouthwestern.edu" target="_blank">UT Southwestern Medical Center</a> · Dallas, TX, USA</div>
+      <div class="profile-links">
+        <a href="mailto:imtiaz.hossain.iu@gmail.com">Email</a>
+        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>
+      </div>
+    </div>
+  </div>
+  <p class="bio">I am a postdoctoral researcher at <a href="https://www.utsouthwestern.edu" target="_blank">UT Southwestern Medical Center</a> working on multimodal foundational AI models for medicine and healthcare. My research spans <strong>knowledge distillation</strong>, efficient deep learning, <strong>3D pose estimation</strong>, and computer vision. I completed my Ph.D. and M.S. at <a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, South Korea, supported by the Korean Presidential Scholarship. I have published in <a href="https://iclr.cc" target="_blank">ICLR</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76" target="_blank">IEEE TCSVT</a>, <a href="https://www.sciencedirect.com/journal/information-processing-and-management" target="_blank">Elsevier IP&amp;M</a>, and <a href="https://www.sciencedirect.com/journal/applied-soft-computing" target="_blank">Applied Soft Computing</a>.</p>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="sec-head"><span class="sec-head-label">News</span><span class="sec-head-line"></span></div>
+  <div class="news-list">
+
+    <div class="news-item">
+      <div class="news-date">Apr 2026</div>
+      <span class="ntag ntag-pos">Position</span>
+      <div class="news-body">Joined <a href="https://www.utsouthwestern.edu" target="_blank">UT Southwestern Medical Center</a> as Postdoctoral Researcher, Dept. of Bioinformatics, Dallas, TX.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2026</div>
+      <span class="ntag ntag-paper">Paper</span>
+      <div class="news-body">
+        Robust 3D Pose Estimation via Occlusion-Aware Training and Test Time Adaptation.
+        <div class="news-sub"><a href="https://www.sciencedirect.com/journal/ict-express" target="_blank"><em>ICT Express</em></a>, Elsevier</div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Jan 2025</div>
+      <span class="ntag ntag-paper">Paper</span>
+      <div class="news-body">
+        Single Teacher, Multiple Perspectives: Teacher Knowledge Augmentation for Enhanced Knowledge Distillation. <span class="conf-badge">Top Tier A*</span>
+        <div class="news-sub"><a href="https://iclr.cc/Conferences/2025" target="_blank"><em>ICLR 2025</em></a></div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2025</div>
+      <span class="ntag ntag-paper">Paper</span>
+      <div class="news-body">
+        Why Logit Distillation Works: A Novel KD Technique via Target Augmentation and Logits Distortion.
+        <div class="news-sub"><a href="https://www.sciencedirect.com/journal/information-processing-and-management" target="_blank"><em>Information Processing &amp; Management</em></a>, Elsevier <span class="if-badge">IF 7.4 · Q1</span></div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2025</div>
+      <span class="ntag ntag-paper">Paper</span>
+      <div class="news-body">
+        Complexity-Aware Dynamic Gradient Shifting for 3D Pose Estimation and Regression Learning.
+        <div class="news-sub"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76" target="_blank"><em>IEEE TCSVT</em></a> <span class="if-badge">IF 8.3 · Q1</span></div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">Sep 2025</div>
+      <span class="ntag ntag-teach">Teaching</span>
+      <div class="news-body">Appointed Part-time Lecturer, Dept. of AI, <a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>.
+        <div class="news-sub">Courses: AI Creative Research Project 2 · Convolutional Neural Networks</div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2024</div>
+      <span class="ntag ntag-patent">Patent</span>
+      <div class="news-body">US Patent Application No. 18/539,431 filed — Activated Neurons Responses Transfer via Sparse Activation Maps in Knowledge Distillation.</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2024</div>
+      <span class="ntag ntag-paper">Paper</span>
+      <div class="news-body">
+        PURF: Improving Teacher Representations by Imposing Smoothness Constraints for Knowledge Distillation.
+        <div class="news-sub"><a href="https://www.sciencedirect.com/journal/applied-soft-computing" target="_blank"><em>Applied Soft Computing</em></a>, Elsevier <span class="if-badge">IF 7.2 · Q1</span></div>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">2019</div>
+      <span class="ntag ntag-award">Award</span>
+      <div class="news-body">Best Paper Award — Korean Software Congress Conference.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="sec-head"><span class="sec-head-label">Research Interests</span><span class="sec-head-line"></span></div>
+  <div class="research-list">
+    <div class="research-item"><div class="ri-dot"></div><div class="ri-text"><strong>Knowledge distillation and transfer learning</strong> — novel training strategies for compressing and transferring representational knowledge</div></div>
+    <div class="research-item"><div class="ri-dot"></div><div class="ri-text"><strong>AI for medicine and healthcare</strong> — multimodal foundational models, medical imaging (MRI, CT, ECG, EEG)</div></div>
+    <div class="research-item"><div class="ri-dot"></div><div class="ri-text"><strong>3D human pose estimation</strong> — occlusion-aware learning, test-time adaptation, robust regression</div></div>
+    <div class="research-item"><div class="ri-dot"></div><div class="ri-text"><strong>Efficient and lightweight model design</strong> — deployment on edge and low-resource devices, foundational LLMs</div></div>
+    <div class="research-item"><div class="ri-dot"></div><div class="ri-text"><strong>Computer vision, biometrics, and digital forensics</strong> — action recognition, moving object detection</div></div>
+    <div class="research-item"><div class="ri-dot"></div><div class="ri-text"><strong>Multimodal and continual learning</strong> — catastrophic forgetting, distribution shift robustness</div></div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="sec-head"><span class="sec-head-label">Selected Publications</span><span class="sec-head-line"></span></div>
+  <div class="pub-list">
+
+    <div class="pub-item">
+      <div class="pub-year">2026</div>
+      <div>
+        <div class="pub-title">Robust 3D Pose Estimation via Occlusion-Aware Training and Test Time Adaptation</div>
+        <div class="pub-authors"><strong>Hossain MI</strong>, Akhter S, Yang S, Huh EN.</div>
+        <div class="pub-venue"><a href="https://www.sciencedirect.com/journal/ict-express" target="_blank"><em>ICT Express</em></a>, Elsevier, 2026.</div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Single Teacher, Multiple Perspectives: Teacher Knowledge Augmentation for Enhanced Knowledge Distillation</div>
+        <div class="pub-authors"><strong>Hossain MI</strong>, Akhter S, Hong CS, Huh EN.</div>
+        <div class="pub-venue"><a href="https://iclr.cc/Conferences/2025" target="_blank"><em>ICLR 2025</em></a>.</div>
+        <div class="pub-meta"><span class="conf-badge">Top Tier A*</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Why Logit Distillation Works: A Novel Knowledge Distillation Technique by Deriving Target Augmentation and Logits Distortion</div>
+        <div class="pub-authors"><strong>Hossain MI</strong>, Akhter S, Mahbub NI, Hong CS, Huh EN.</div>
+        <div class="pub-venue"><a href="https://www.sciencedirect.com/journal/information-processing-and-management" target="_blank"><em>Information Processing &amp; Management</em></a>, Elsevier, 2025.</div>
+        <div class="pub-meta"><span class="if-badge">IF 7.4 · Q1</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Complexity-Aware Dynamic Gradient Shifting: A Novel Soft Supervision Training Strategy for 3D Pose Estimation and Regression Learning</div>
+        <div class="pub-authors"><strong>Hossain MI</strong>, Akhter S, Hong CS, Huh EN.</div>
+        <div class="pub-venue"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76" target="_blank"><em>IEEE Transactions on Circuits and Systems for Video Technology</em></a>, 2025.</div>
+        <div class="pub-meta"><span class="if-badge">IF 8.3 · Q1</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">PURF: Improving Teacher Representations by Imposing Smoothness Constraints for Knowledge Distillation</div>
+        <div class="pub-authors"><strong>Hossain MI</strong>, Akhter S, Hong CS, Huh EN.</div>
+        <div class="pub-venue"><a href="https://www.sciencedirect.com/journal/applied-soft-computing" target="_blank"><em>Applied Soft Computing</em></a>, Elsevier, 2024.</div>
+        <div class="pub-meta"><span class="if-badge">IF 7.2 · Q1</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2023</div>
+      <div>
+        <div class="pub-title">The Role of Microservice Approach in Edge Computing: Opportunities, Challenges, and Research Directions</div>
+        <div class="pub-authors">Hossain MD, Sultana T, Akhter S, <strong>Hossain MI</strong>, et al.</div>
+        <div class="pub-venue"><a href="https://www.sciencedirect.com/journal/ict-express" target="_blank"><em>ICT Express</em></a>, Elsevier, 2023.</div>
+        <div class="pub-meta"><span class="if-badge">IF 4.1</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2022</div>
+      <div>
+        <div class="pub-title">NeuRes: Highly Activated Neurons Responses Transfer via Distilling Sparse Activation Maps</div>
+        <div class="pub-authors">Akhter S, <strong>Hossain MI</strong>, Hossain MD, Huh EN.</div>
+        <div class="pub-venue"><a href="https://ieeeaccess.ieee.org" target="_blank"><em>IEEE Access</em></a>, 2022.</div>
+        <div class="pub-meta"><span class="if-badge">IF 3.4</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2020</div>
+      <div>
+        <div class="pub-title">Batch Entropy Supervised CNNs for Feature Extraction and Harmonizing for Action Recognition</div>
+        <div class="pub-authors"><strong>Hossain MI</strong>, Siddique A, Hossain MA, Hossain MD, Huh EN.</div>
+        <div class="pub-venue"><a href="https://ieeeaccess.ieee.org" target="_blank"><em>IEEE Access</em></a>, 2020.</div>
+        <div class="pub-meta"><span class="if-badge">IF 3.4</span></div>
+      </div>
+    </div>
+
+  </div>
+  <p style="font-size:.76rem;color:var(--muted2);margin-top:1rem">Full list on <a href="https://scholar.google.com" target="_blank">Google Scholar</a>.</p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-head"><span class="sec-head-label">Experience</span><span class="sec-head-line"></span></div>
+  <div class="row-list">
+    <div class="row-item">
+      <div class="row-period">Apr 2026 – present</div>
+      <div>
+        <div class="row-title">Postdoctoral Researcher</div>
+        <div class="row-org"><a href="https://www.utsouthwestern.edu" target="_blank">UT Southwestern Medical Center</a>, Dept. of Bioinformatics, Dallas, TX</div>
+        <div class="row-detail">Developing multimodal foundational AI models for medicine, healthcare, and biomedical research.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">Sep 2025 – Mar 2026</div>
+      <div>
+        <div class="row-title">Part-time Lecturer</div>
+        <div class="row-org"><a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, Dept. of Artificial Intelligence, South Korea</div>
+        <div class="row-detail">Taught AI Creative Research Project 2 and Convolutional Neural Networks at graduate level.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">Sep 2025 – Mar 2026</div>
+      <div>
+        <div class="row-title">Research Professor</div>
+        <div class="row-org"><a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, Institute of Industry Academia Collaboration, South Korea</div>
+        <div class="row-detail">Lightweight LLM foundational models for low-resource devices.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">Sep 2021 – Aug 2025</div>
+      <div>
+        <div class="row-title">Research Assistant (PhD)</div>
+        <div class="row-org"><a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, South Korea</div>
+        <div class="row-detail">Knowledge distillation; improving performance of lightweight architectures. Korean Presidential Scholar.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">Mar 2019 – Feb 2021</div>
+      <div>
+        <div class="row-title">Research Assistant (MS)</div>
+        <div class="row-org"><a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, South Korea</div>
+        <div class="row-detail">Visual-based human action recognition from video. BK21 Scholar.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">Jan 2017 – Jun 2017</div>
+      <div>
+        <div class="row-title">Software Engineer Intern</div>
+        <div class="row-org">LEADS Corporation Limited, Bangladesh</div>
+        <div class="row-detail">Embedded and IoT-based home and industry automation applications.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-head"><span class="sec-head-label">Education</span><span class="sec-head-line"></span></div>
+  <div class="row-list">
+    <div class="row-item">
+      <div class="row-period">2021 – 2025</div>
+      <div>
+        <div class="row-title">Ph.D., Computer Science &amp; Engineering</div>
+        <div class="row-org"><a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, South Korea</div>
+        <div class="row-detail">Thesis: Enhancing Representational Expertise of Knowledge Sources for Distillation and Transfer · Korean Presidential Scholarship</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">2019 – 2021</div>
+      <div>
+        <div class="row-title">M.S., Computer Science &amp; Engineering</div>
+        <div class="row-org"><a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, South Korea</div>
+        <div class="row-detail">Thesis: Discriminative Feature Learning through Batch Entropy Supervision and Augmentation in CNNs · BK21 Scholarship</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">2016 – 2018</div>
+      <div>
+        <div class="row-title">M.Sc., Information &amp; Communication Technology</div>
+        <div class="row-org"><a href="https://www.iu.ac.bd" target="_blank">Islamic University</a>, Bangladesh</div>
+        <div class="row-detail">Thesis: Human Activity Recognition Using CNN and HMM</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <div class="row-period">2012 – 2016</div>
+      <div>
+        <div class="row-title">B.Sc., Information &amp; Communication Technology</div>
+        <div class="row-org"><a href="https://www.iu.ac.bd" target="_blank">Islamic University</a>, Bangladesh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="sec-head"><span class="sec-head-label">Teaching</span><span class="sec-head-line"></span></div>
+  <p style="font-size:.8rem;color:var(--muted);margin-bottom:1.1rem">Part-time Lecturer · Dept. of Artificial Intelligence, <a href="https://www.khu.ac.kr" target="_blank">Kyung Hee University</a>, South Korea · Sep 2025 – Mar 2026</p>
+  <div class="row-list">
+    <div class="course-item">
+      <div class="course-sem">Spring 2026</div>
+      <div>
+        <div class="course-title">AI Creative Research Project 2 &nbsp;<a href="#" style="font-size:.73rem;font-weight:400;color:var(--blue)">[Course page]</a></div>
+        <div class="course-meta">Graduate level (Master's &amp; PhD) · Dept. of AI, Kyung Hee University</div>
+        <div class="course-desc">Project-based course guiding students through the full research cycle: problem formulation, literature review, experimental design, and paper writing in AI.</div>
+      </div>
+    </div>
+    <div class="course-item">
+      <div class="course-sem">Fall 2025</div>
+      <div>
+        <div class="course-title">Convolutional Neural Networks &nbsp;<a href="#" style="font-size:.73rem;font-weight:400;color:var(--blue)">[Course page]</a></div>
+        <div class="course-meta">Graduate level (Master's &amp; PhD) · Dept. of AI, Kyung Hee University</div>
+        <div class="course-desc">Covers CNN foundations, modern architectures (ResNet, VGG, EfficientNet), object detection, semantic segmentation, and knowledge distillation techniques.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-head"><span class="sec-head-label">Contact</span><span class="sec-head-line"></span></div>
+  <div class="contact-list">
+    <div class="contact-row"><span class="contact-label">Email</span><span class="contact-val"><a href="mailto:imtiaz.hossain.iu@gmail.com">imtiaz.hossain.iu@gmail.com</a></span></div>
+    <div class="contact-row"><span class="contact-label">Phone</span><span class="contact-val">+82 10 8704 4424</span></div>
+    <div class="contact-row"><span class="contact-label">Address</span><span class="contact-val">Dept. of Bioinformatics, <a href="https://www.utsouthwestern.edu" target="_blank">UT Southwestern Medical Center</a>, Dallas, TX, USA</span></div>
+    <div class="contact-row"><span class="contact-label">Google Scholar</span><span class="contact-val"><a href="https://scholar.google.com" target="_blank">scholar.google.com</a></span></div>
+    <div class="contact-row"><span class="contact-label">GitHub</span><span class="contact-val"><a href="https://github.com" target="_blank">github.com</a></span></div>
+    <div class="contact-row"><span class="contact-label">LinkedIn</span><span class="contact-val"><a href="https://linkedin.com" target="_blank">linkedin.com/in/</a></span></div>
+  </div>
+</section>
+
+<footer>
+  <span>Md Imtiaz Hossain · UT Southwestern Medical Center</span>
+  <span>Last updated May 2026</span>
+</footer>
+
+<script>
+const navLinks = document.querySelectorAll('#topnav a');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 70) cur = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
+</script>
+</body>
+</html>
